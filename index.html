@@ -3,41 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RX-TEAM | Cyber Intelligence</title>
+    <title>Advanced Cyber Intelligence</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <h1>RX-TEAM</h1>
-        <p>The Future of Advanced Cyber Intelligence</p>
-    </div>
+        <p>Cyber Intelligence | Powered by CRZ101 & SVR19</p>
+    </header>
 
-    <div class="container">
-        <h2>Enter Target for Analysis</h2>
-        <input type="text" id="targetInput" placeholder="Enter Target (e.g., example.com)">
-        <div class="button-group">
-            <button onclick="analyze()">Analyze</button>
-            <button onclick="scanPort()">Port Scanner</button>
-            <button onclick="whois()">WHOIS Lookup</button>
-        </div>
-        <div class="results" id="resultsContainer"></div>
-    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#developers">Developers</a></li>
+            <li><a href="#login">Login</a></li>
+        </ul>
+    </nav>
 
-    <div class="developer">
-        <h2>About RX-TEAM</h2>
-        <p><strong>Developer:</strong> RX-TEAM Cybersecurity</p>
-        <p><strong>Contact:</strong> support@rxteam.cyber</p>
-        <p><strong>Partners:</strong> Censys, Shodan, CyberSec Labs</p>
-        <p><strong>Follow Us:</strong> 
-            <a href="#">Twitter</a> | 
-            <a href="#">GitHub</a> | 
-            <a href="#">LinkedIn</a>
-        </p>
-    </div>
+    <main>
+        <section id="features" class="container">
+            <h2>Welcome to Advanced Cyber Intelligence</h2>
+            <input type="text" id="targetInput" placeholder="Enter Target (e.g., example.com)">
+            <div class="button-group">
+                <button onclick="analyze()">Analyze</button>
+                <button onclick="scanPort()">Port Scanner</button>
+                <button onclick="whois()">WHOIS Lookup</button>
+            </div>
+            <div class="results" id="resultsContainer"></div>
+        </section>
 
-    <div class="footer">
-        <p>&copy; 2024 RX-TEAM. All Rights Reserved.</p>
-    </div>
+        <section id="developers" class="developers">
+            <h2>About the Developers</h2>
+            <p><strong>CRZ101</strong> & <strong>SVR19</strong></p>
+            <p>Contact us at: <a href="mailto:cruzrt840@gmail.com">cruzrt840@gmail.com</a></p>
+        </section>
+
+        <section id="login" class="login-section">
+            <h2>Login or Register</h2>
+            <button onclick="loginWithGoogle()">Login with Google</button>
+            <button onclick="loginWithFacebook()">Login with Facebook</button>
+            <button onclick="loginWithInstagram()">Login with Instagram</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 RX-TEAM | All Rights Reserved</p>
+    </footer>
 </body>
-</html>
+                                  </html>
