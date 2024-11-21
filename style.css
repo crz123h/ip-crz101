@@ -1,99 +1,65 @@
-/* إعدادات عامة */
+/* تصميم عام */
 body {
     margin: 0;
-    font-family: 'Courier New', monospace;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(120deg, #000428, #004e92);
-    color: #00ff00;
+    color: #fff;
     overflow-x: hidden;
 }
 
 .header {
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px;
     background: rgba(0, 0, 0, 0.8);
     color: #00ff00;
 }
 
-.header h1 {
-    font-size: 64px;
-    text-shadow: 0 0 20px #00ff00, 0 0 30px #007acc;
-    animation: glow 2s infinite alternate;
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    background: #000;
+    margin: 0;
 }
 
-.header p {
-    font-size: 18px;
-    color: #00d1ff;
+.navbar ul li {
+    margin: 0 10px;
 }
 
-@keyframes glow {
-    0% { text-shadow: 0 0 20px #00ff00; }
-    100% { text-shadow: 0 0 40px #007acc; }
-}
-
-/* تصميم الحاوية */
-.container {
-    padding: 40px;
-    text-align: center;
-}
-
-.container input, .container button {
-    display: block;
-    margin: 20px auto;
-    padding: 15px;
-    font-size: 18px;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
-
-input {
-    background: #1a1a1a;
+.navbar ul li a {
+    text-decoration: none;
     color: #00ff00;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.navbar ul li a:hover {
     border: 2px solid #00ff00;
 }
 
-input:focus {
-    box-shadow: 0 0 15px #00ff00;
+.container, .developers, .login-section {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px;
+    border-radius: 10px;
 }
 
 button {
     background: linear-gradient(90deg, #00d1ff, #00ff00);
-    border: 2px solid #00ff00;
-    color: black;
-    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    margin: 10px;
     transition: all 0.3s;
 }
 
 button:hover {
+    background: #007acc;
     transform: scale(1.1);
-    box-shadow: 0 0 15px #00ff00;
-}
-
-.results {
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    border: 2px solid #00ff00;
-    border-radius: 8px;
-    color: #00ff00;
-    white-space: pre-wrap;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.developer {
-    padding: 40px;
-    background: #003300;
-    color: #00d1ff;
-    text-align: center;
-}
-
-.footer {
-    padding: 20px;
-    background: #1a1a1a;
-    color: #00d1ff;
-    text-align: center;
 }
