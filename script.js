@@ -9,60 +9,34 @@ async function analyze() {
     resultsContainer.textContent = "Fetching data...";
 
     try {
-        const shodanResponse = await fetch(`https://api.shodan.io/shodan/host/search?key=YOUR_SHODAN_API_KEY&query=${target}`);
+        const shodanResponse = await fetch(`https://api.shodan.io/shodan/host/search?key=3eUPKAyjY5nIQS17qJKt8qmdoOS3Fmz1&query=${target}`);
         const shodanData = await shodanResponse.json();
 
-        resultsContainer.textContent = `
-Target: ${target}
-Shodan Data: ${JSON.stringify(shodanData, null, 2)}
-        `;
-    } catch (error) {
-        resultsContainer.textContent = `Error: ${error.message}`;
-    }
-}
-
-async function scanPort() {
-    const target = document.getElementById("targetInput").value;
-    const resultsContainer = document.getElementById("resultsContainer");
-    if (!target) {
-        resultsContainer.textContent = "Please enter a valid target.";
-        return;
-    }
-
-    resultsContainer.textContent = "Scanning ports for " + target + "...";
-    setTimeout(() => {
-        resultsContainer.textContent += `
-Common ports:
-- Port 80 (HTTP) - Open
-- Port 443 (HTTPS) - Open
-- Port 22 (SSH) - Closed
-        `;
-    }, 2000);
-}
-
-async function whois() {
-    const target = document.getElementById("targetInput").value;
-    const resultsContainer = document.getElementById("resultsContainer");
-    if (!target) {
-        resultsContainer.textContent = "Please enter a valid target.";
-        return;
-    }
-
-    resultsContainer.textContent = "Fetching WHOIS data for " + target + "...";
-    try {
-        const response = await fetch(`https://jsonwhoisapi.com/api/v1/whois?identifier=${target}`, {
-            headers: { Authorization: "Token YOUR_API_KEY_HERE" }
+        const censysResponse = await fetch("https://search.censys.io/api/v1/view/ipv4/" + target, {
+            method: "GET",
+            headers: {
+                Authorization: "Basic " + btoa("c981f633-3d5d-4660-8569-66c5ad73b11c:AbbBD0AvZwddnzZVZwoIsLFsT5A3Fcab")
+            }
         });
-        const data = await response.json();
+        const censysData = await censysResponse.json();
 
         resultsContainer.textContent = `
-WHOIS Data:
-Domain: ${data.domain}
-Registrar: ${data.registrar}
-Created: ${data.created}
-Expires: ${data.expires}
+Shodan Data: ${JSON.stringify(shodanData, null, 2)}
+Censys Data: ${JSON.stringify(censysData, null, 2)}
         `;
     } catch (error) {
         resultsContainer.textContent = `Error: ${error.message}`;
     }
+}
+
+function loginWithGoogle() {
+    alert("Login with Google is under development.");
+}
+
+function loginWithFacebook() {
+    alert("Login with Facebook is under development.");
+}
+
+function loginWithInstagram() {
+    alert("Login with Instagram is under development.");
 }
